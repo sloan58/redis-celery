@@ -9,19 +9,27 @@ This is a small demo application that uses Python Celery with Redis
 ### tasks.py
 ```python
 from celery import Celery
+from time import sleep
+import random
 
 # Init Celery app
 # Built using Python 3.9.6
-app = Celery('tasks', broker='redis://localhost', backend='redis://localhost')
+app = Celery('my_app_tasks', broker='redis://localhost', backend='redis://localhost')
 
 
 # Define async job call_api
 @app.task
 def call_api(data):
-    return data
+    # Perform some operation on the input data
+    result = data * 2
+    
+    # Simulate network delay calling API
+    sleep(random.uniform(0, 1))
+
+    return result
 ```
 
-In one terminal, run this Celery worker using `celery -A tasks worker --loglevel=INFO`
+In one terminal, run this Celery worker using `celery -A my_app_tasks worker --loglevel=INFO`
 
 In another terminal, run the backend ui, use `celery -A tasks flower --port=5555`
 

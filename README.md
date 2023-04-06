@@ -67,4 +67,4 @@ if __name__ == '__main__':
 The main.py file runs a simulated application that performs some long-running task
 and then hands the results off to run as async tasks in Celery.
 
-> Call `.delay()` to run the Celery tasks async (otherwise they will run sync)
+> Note: call `.delay()` to run the Celery tasks async (otherwise they will run sync)

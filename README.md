@@ -31,7 +31,7 @@ def call_api(data):
 
 In one terminal, run the Celery worker using `celery -A tasks worker --loglevel=INFO`
 
-In another terminal, run the backend ui, use `celery -A tasks flower --port=5555`
+In another terminal, run the backend ui using `celery -A tasks flower --port=5555`
 
 The "backend" web interface will be served at http://localhost:5555
 

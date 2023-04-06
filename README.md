@@ -68,3 +68,5 @@ The main.py file runs a simulated application that performs some long-running ta
 and then hands the results off to run as async tasks in Celery.
 
 > Note: call `.delay()` to run the Celery tasks async (otherwise they will run sync)
+
+Run the main app with `python main.py`

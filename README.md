@@ -29,7 +29,7 @@ def call_api(data):
     return result
 ```
 
-In one terminal, run this Celery worker using `celery -A my_app_tasks worker --loglevel=INFO`
+In one terminal, run the Celery worker using `celery -A tasks worker --loglevel=INFO`
 
 In another terminal, run the backend ui, use `celery -A tasks flower --port=5555`
 
